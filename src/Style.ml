@@ -27,7 +27,7 @@ let unescape escaped =
 
 let buildType ~loc tags =
   Ast_builder.Default.(
-    [%type: [%t ptyp_variant ~loc tags Open None] ReactNative.Style.typed_t])
+    [%type: [%t ptyp_variant ~loc tags Open None] ReactNative2.Style2.t])
 
 let finalizeStyle ~loc (tags, records) =
   Ast_builder.Default.(

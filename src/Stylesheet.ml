@@ -47,7 +47,7 @@ let mapType expr =
       in
       let vardecl = gen_symbol ~prefix:"reactnative_stylesheet_variant_" () in
       Ast_builder.Default.
-        ( [%type: [%t ptyp_var ~loc vardecl] ReactNative2.TypedStyle.t],
+        ( [%type: [%t ptyp_var ~loc vardecl] ReactNative2.Style2.t],
           Some (vardecl, variants) )
   | { pexp_loc = loc; _ } -> ([%type: ReactNative.Style.t], None)
 
