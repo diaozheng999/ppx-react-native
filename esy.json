@@ -1,0 +1,21 @@
+{
+  "name": "@nasi/ppx-react-native",
+  "author": { "name": "Diao Zheng" },
+  "description": "PPX rewriters for React Native.",
+  "version": "0.1.0",
+  "esy": { "build": "dune build -p ppx_react_native" },
+  "scripts": { "install-ppx": "dune install --prefix build" },
+  "dependencies": {
+    "@nasi/ppx-precisely-common": "^0.1.0",
+    "@opam/ocaml-migrate-parsetree": "2.1.0",
+    "@opam/ocamlfind-secondary": "*",
+    "@opam/ppxlib": "0.22.0",
+    "ocaml": "4.11.x"
+  },
+  "devDependencies": {
+    "@opam/dune": "2.8.4",
+    "@opam/merlin": "4.1-411",
+    "@opam/ocaml-lsp-server": "1.4.1",
+    "@opam/ocamlformat": "0.17.0"
+  }
+}

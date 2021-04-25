@@ -1,0 +1,16 @@
+{
+  "name": "@nasi/ppx-react-native",
+  "author": {
+    "name": "Diao Zheng"
+  },
+  "description": "PPX rewriters for React Native.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "repository": "github:diaozheng999/ppx-react-native",
+  "scripts": {
+    "postinstall": "node scripts/post_install.js"
+  },
+  "devDependencies": {
+    "esy": "^0.6.10"
+  }
+}
