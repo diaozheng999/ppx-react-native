@@ -2,7 +2,7 @@
   "name": "@nasi/ppx-react-native",
   "author": { "name": "Diao Zheng" },
   "description": "PPX rewriters for React Native.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "esy": { "build": "dune build -p ppx_react_native" },
   "scripts": { "install-ppx": "dune install --prefix build" },
   "dependencies": {
