@@ -1,6 +1,6 @@
 {
   "checksum": "84a00739226e263a6246f0c137e129b5",
-  "root": "@nasi/ppx-react-native@link-dev:./esy.json",
+  "root": "@nasi/ppx-react-native@link-dev:./package.json",
   "node": {
     "ocaml@4.11.2000@d41d8cd9": {
       "id": "ocaml@4.11.2000@d41d8cd9",
@@ -1284,11 +1284,15 @@
       ],
       "devDependencies": [ "ocaml@4.11.2000@d41d8cd9" ]
     },
-    "@nasi/ppx-react-native@link-dev:./esy.json": {
-      "id": "@nasi/ppx-react-native@link-dev:./esy.json",
+    "@nasi/ppx-react-native@link-dev:./package.json": {
+      "id": "@nasi/ppx-react-native@link-dev:./package.json",
       "name": "@nasi/ppx-react-native",
-      "version": "link-dev:./esy.json",
-      "source": { "type": "link-dev", "path": ".", "manifest": "esy.json" },
+      "version": "link-dev:./package.json",
+      "source": {
+        "type": "link-dev",
+        "path": ".",
+        "manifest": "package.json"
+      },
       "overrides": [],
       "dependencies": [
         "ocaml@4.11.2000@d41d8cd9", "@opam/ppxlib@opam:0.22.0@17206ba4",
