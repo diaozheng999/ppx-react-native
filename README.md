@@ -12,6 +12,8 @@ Recommended to use with [`ppx-install`](https://github.com/diaozheng999/ppx-inst
 }
 ```
 
+This package also requires [`@nasi/react-native`](https://github.com/diaozheng999/rescript-react-native) as a dependency.
+
 ## Stylesheet
 
 This package adds the `%%stylesheet` extension, which removes the need for `Js.t` types for stylesheet calls. It allows the use of:
@@ -27,7 +29,7 @@ This will allow you to use `style.main` and `style.text` further down in the cod
 
 ### Interaction with `%style`
 
-This PR also allows for `%style` extension to be used within a `%%stylesheet` extension as such:
+This package also allows for `%style` extension to be used within a `%%stylesheet` extension as such:
 ```rescript
 %%stylesheet(let style = {
   main: %style({ flex: 1. }),
