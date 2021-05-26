@@ -4,7 +4,7 @@ PPX rewriters for ReScript React Native
 
 ## Usage
 
-Recommended to use with `ppx-install`. Add to `package.json`:
+Recommended to use with [`ppx-install`](https://github.com/diaozheng999/ppx-install). Add to `package.json`:
 
 ```json
 {
