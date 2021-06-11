@@ -4,22 +4,28 @@
     "name": "Diao Zheng"
   },
   "description": "PPX rewriters for React Native.",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "repository": "github:diaozheng999/ppx-react-native",
   "esy": { "build": "dune build -p ppx_react_native" },
   "scripts": { "install-ppx": "dune install --prefix build" },
   "dependencies": {
-    "@nasi/ppx-precisely-common": "0.1.1",
-    "@opam/dune": "2.8.4",
+    "@nasi/ppx-precisely-common": "0.1.2",
+    "@opam/dune": "2.8.5",
     "@opam/ocaml-migrate-parsetree": "2.1.0",
     "@opam/ocamlfind-secondary": "*",
     "@opam/ppxlib": "0.22.0",
-    "ocaml": "4.11.x"
+    "ocaml": ">=4.06.1"
   },
+  "files": [
+    "src",
+    "dune-project",
+    "LICENSE",
+    "ppx_react_native.opam",
+    "README.md"
+  ],
   "devDependencies": {
-    "@opam/merlin": "4.1-411",
-    "@opam/ocaml-lsp-server": "1.4.1",
+    "@opam/ocaml-lsp-server": "github:diaozheng999/ocaml-lsp:ocaml-lsp-server.opam#c426212076cbbdc584b8c8a93e951e639c067547",
     "@opam/ocamlformat": "0.17.0"
   }
 }
