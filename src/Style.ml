@@ -27,14 +27,14 @@ let unescape escaped =
 
 let buildType ~loc tags =
   Ast_builder.Default.(
-    [%type: [%t ptyp_variant ~loc tags Open None] ReactNative2.Style2.t])
+    [%type: [%t ptyp_variant ~loc tags Open None] ReactNative2.Export.Style.t])
 
 let finalizeStyle ~loc (tags, records) =
   Ast_builder.Default.(
     let txt = gen_symbol ~prefix:"style_gen_" () in
     let pat = ppat_var ~loc { txt; loc } in
     let ident = pexp_ident ~loc { txt = lident txt; loc } in
-    let apply = pexp_apply ~loc [%expr ReactNative.Style.style] records in
+    let apply = pexp_apply ~loc [%expr ReactNative2.Export.StyleCompat.style] records in
     [%expr
       let ([%p pat] : [%t buildType ~loc tags]) = Obj.magic [%e apply] in
       [%e ident]])
@@ -48,10 +48,12 @@ let mapArg (lident, expr) =
   let { txt; _ } = labelOfLident lident in
   (Labelled txt, expr)
 
-let expand ~ctxt =
-  let loc = Expansion_context.Extension.extension_point_loc ctxt in
+let expand_at ~loc =
   walk ~map:(both mapTag mapArg) ~finalise:(finalizeStyle ~loc) ~push:pushTuple
     ~acc:([], [ (Nolabel, [%expr ()]) ])
+let expand ~ctxt =
+  let loc = Expansion_context.Extension.extension_point_loc ctxt in
+  expand_at ~loc
 
 let extension =
   Extension.V3.declare "style" Extension.Context.Expression

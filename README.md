@@ -14,6 +14,22 @@ Recommended to use with [`ppx-install`](https://github.com/diaozheng999/ppx-inst
 
 This package also requires [`@nasi/react-native`](https://github.com/diaozheng999/rescript-react-native) as a dependency.
 
+If compiling with Melange, update in `bs-config.json`:
+```json
+{
+  "ppx-flags": ["@nasi/ppx-react-native"]
+}
+```
+
+also update in `esy.json`:
+```json
+{
+  "dependencies": {
+    "@nasi/ppx-react-native": "*"
+  }
+}
+```
+
 ## Stylesheet
 
 This package adds the `%%stylesheet` extension, which removes the need for `Js.t` types for stylesheet calls. It allows the use of:
@@ -32,8 +48,8 @@ This will allow you to use `style.main` and `style.text` further down in the cod
 This package also allows for `%style` extension to be used within a `%%stylesheet` extension as such:
 ```rescript
 %%stylesheet(let style = {
-  main: %style({ flex: 1. }),
-  text: %style({ fontSize: 14. }),
+  main: { flex: 1. },
+  text: { fontSize: 14. },
 })
 ```
 Here, you'll get `style.main` with type `Style.typed_t<[> #flex ]>>` and `style.text` with type `Style.typed_t<[> #fontSize ]>`.
@@ -277,16 +293,7 @@ let make = () => {
 
 I'm looking to include the following changes in the PPX rewriter:
 
-1. Implicit `%style` extension within the `%%stylesheet` extension, allowing:
-
-```rescript
-%%stylesheet(let styles = {
-  main: { flex: 1. },
-  text: { fontSize: 14. },
-})
-```
-
-2. Allow punning in the `%style` extension, allowing:
+1. Allow punning in the `%style` extension, allowing:
 ```rescript
 @react.component
 let make = (~fontSize) => {
